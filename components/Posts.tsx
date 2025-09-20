@@ -13,7 +13,7 @@ const PostPreview = ({ post }: { post: Edge }) => {
     <Link className="w-full " href={`${link}`} target="_blank">
       <article
         key={id}
-        className="group flex relative size-full rounded-2xl overflow-hidden flex-col items-start justify-between"
+        className="group  min-h-56 sm:min-h-44 md:min-h-56 flex relative size-full rounded-2xl overflow-hidden flex-col items-start justify-between"
       >
         {featuredImage.node && (
           <Image
@@ -58,11 +58,11 @@ export const AllPostsGrid = async (limit = 3) => {
   );
 };
 
-export const LatestPosts = async ({ limit = 3 }: { limit?: number }) => {
+export const LatestPosts = async ({ limit = 4 }: { limit?: number }) => {
   const { edges } = await getAllPostsFromWordPress(limit);
 
   return (
-    <div className="flex w-full h-full gap-2  ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 flex-1  w-full h-full gap-2  ">
       {edges.map((post) => (
         <PostPreview key={post.node.id} post={post} />
       ))}

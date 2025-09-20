@@ -6,7 +6,9 @@ const Youtube = async () => {
   return (
     <iframe
       src={`https://www.youtube-nocookie.com/embed?listType=playlist&list=${userId}`}
-      height="220"
+      title="YouTube video player"
+      frameBorder={0}
+      className="rounded-xl flex-1 max-sm:min-h-[250px] "
       allowFullScreen
     />
   );

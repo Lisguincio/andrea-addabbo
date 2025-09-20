@@ -8,6 +8,9 @@ import ExpertArea from "@/components/ExpertArea";
 import SpotifyList from "@/components/Spotify";
 import Youtube from "@/components/Youtube";
 import Map from "@/components/Map";
+import TikTok from "@/components/TikTok";
+import Image from "next/image";
+import MayLogo from "@/components/MayLogo";
 
 export default async function Home() {
   return (
@@ -24,26 +27,28 @@ export default async function Home() {
             </CardBody>
           </Card>
 
-          <Card className="grow">
-            <CardBody className="">
-              <CardTitle>Ho collaborato con</CardTitle>
-              <WorkedWith />
+          <Card className="flex flex-col grow">
+            <CardBody className="flex flex-col h-full">
+              <CardTitle>La mia azienda</CardTitle>
+              <div className="flex-1">
+                <MayLogo />
+              </div>
             </CardBody>
           </Card>
         </div>
-        <div className="h-full flex flex-col">
+        <div className="h-full gap-4 flex flex-col">
           <Card className=" flex-1">
             <CardBody className="flex flex-col justify-start h-full">
-              <CardTitle className="mb-2">Ombre sul lavoro - Spotify</CardTitle>
-              <link
-                rel="alternate"
-                type="application/json+oembed"
-                href="https://open.spotify.com/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fshow%2F5eXZwvvxt3K2dxha3BSaAe"
-              />
-              <Suspense>{await SpotifyList({ limit: 8 })}</Suspense>
-              <hr className="my-6 border-gray-300" />
-              <CardTitle className="mb-2">Ultimo video - Youtube</CardTitle>
-              <Youtube />
+              <CardTitle className="mb-2">
+                TikTok - Pillole di sicurezza
+              </CardTitle>
+              <TikTok />
+            </CardBody>
+          </Card>
+          <Card>
+            <CardBody>
+              <CardTitle>Con chi collaboro</CardTitle>
+              <WorkedWith />
             </CardBody>
           </Card>
         </div>
@@ -58,14 +63,24 @@ export default async function Home() {
           </Card>
         </div>
         <div className="h-full col-span-2">
-          <Card className="h-full">
-            <CardBody className=" flex flex-col justify-start h-full ">
-              <CardTitle className="mb-2">Ultimi articoli</CardTitle>
-              <LatestPosts />
+          <Card className="h-full  grid grid-cols-1 md:grid-cols-2 gap-4">
+            <CardBody className=" flex flex-col  h-full ">
+              <CardTitle className="mb-2">Ultimo video - Youtube</CardTitle>
+              <Youtube />
+            </CardBody>
+            <CardBody className="  justify-start h-full ">
+              <CardTitle className="mb-2">Ombre sul lavoro - Spotify</CardTitle>
+              <Suspense>{await SpotifyList({ limit: 8 })}</Suspense>
             </CardBody>
           </Card>
         </div>
       </div>
+      <Card className="h-full  mt-4">
+        <CardBody className=" flex  min-h-64 flex-col justify-start h-full ">
+          <CardTitle className="mb-2">Ultimi articoli</CardTitle>
+          <LatestPosts />
+        </CardBody>
+      </Card>
     </div>
   );
 }

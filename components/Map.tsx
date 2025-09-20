@@ -5,19 +5,19 @@ import POSITION from "../constants/position";
 
 const Map = () => {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
-  const position = POSITION;
+  const { lat, lng, defaultZoom } = POSITION;
 
   return (
-    <div className="flex h-52 overflow-hidden relative rounded-2xl min-h-52">
+    <div className="flex h-58 overflow-hidden relative rounded-2xl min-h-52">
       <APIProvider apiKey={apiKey}>
         <VisMap
           className=""
-          center={position}
-          defaultZoom={12}
+          center={{ lat, lng }}
+          defaultZoom={defaultZoom}
           gestureHandling={"greedy"}
           disableDefaultUI={true}
         >
-          <Marker position={position} />
+          <Marker position={{ lat, lng }} />
         </VisMap>
       </APIProvider>
     </div>

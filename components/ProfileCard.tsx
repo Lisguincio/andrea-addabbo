@@ -15,9 +15,9 @@ const ProfileCard = () => {
     <div className="flex h-full flex-col gap-4 ">
       <Card className="flex-1">
         <CardBody className="flex flex-col h-full">
-          <div className="w-full grow h-full object-cover relative rounded-xl overflow-hidden">
+          <div className="w-full aspect-video grow h-full object-cover relative rounded-xl overflow-hidden">
             <Image
-              className="object-cover"
+              className="object-cover "
               fill
               src={propic}
               alt="Profile Card"

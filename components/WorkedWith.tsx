@@ -9,7 +9,7 @@ const WorkedWith =  () => {
   if (!companies || companies.length === 0) return null;
 
   return (
-    <div className="p-4 bg-base-200 rounded-2xl ">
+    <div className=" bg-base-200 rounded-2xl ">
       <Marquee className="[--duration:15s] [--gap:24px]" pauseOnHover>
         {companies.map((c, index) => {
           const item = (

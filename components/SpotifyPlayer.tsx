@@ -34,20 +34,25 @@ const SpotifyPlayer = ({ episodesEmbeds }: Props) => {
 
   if (!loaded) return <p>Nessun episodio disponibile.</p>;
   return (
-    <div className="flex flex-col gap-2">
-      <div>
-        <iframe
-          src={`https://open.spotify.com/embed/episode/${loaded.id}`}
-          width="100%"
-          height="152"
-          frameBorder={0}
-          allow="encrypted-media; clipboard-write; autoplay; fullscreen; picture-in-picture"
-        />
-      </div>
-      <Carousel setApi={setApi} opts={{ align: "start", skipSnaps: true }}>
-        <CarouselContent className="-ml-2">
+    <div className="flex flex-col flex-1 ">
+      <iframe
+        src={`https://open.spotify.com/embed/episode/${loaded.id}`}
+        width="100%"
+        height="170"
+        allow="encrypted-media; clipboard-write; autoplay; fullscreen; picture-in-picture"
+      />
+
+      <Carousel
+        className="-mt-2"
+        setApi={setApi}
+        opts={{ align: "start", skipSnaps: true }}
+      >
+        <CarouselContent className=" -ml-2">
           {episodesEmbeds.map((e) => (
-            <CarouselItem key={e.id} className="basis-5/12  md:basis-2/3 lg:basis-8/12 pl-2">
+            <CarouselItem
+              key={e.id}
+              className="basis-5/12  md:basis-2/3 lg:basis-8/12 pl-2"
+            >
               <button onClick={() => setLoaded(e)} className="flex w-full">
                 <SpotifyItem episode={e} selected={e.id == loaded.id} />
               </button>
@@ -55,8 +60,9 @@ const SpotifyPlayer = ({ episodesEmbeds }: Props) => {
           ))}
           <CarouselItem className="basis-auto pl-2">
             <Link
-			target="_blank"
-			href={`https://open.spotify.com/show/${process.env.NEXT_PUBLIC_SPOTIFY_SHOW_ID!}`}
+              target="_blank"
+              href={`https://open.spotify.com/show/${process.env
+                .NEXT_PUBLIC_SPOTIFY_SHOW_ID!}`}
               className={
                 "flex items-center h-full gap-2 p-1 px-3 bg-[#1DB954] rounded-2xl transition-all"
               }
@@ -87,7 +93,7 @@ const SpotifyItem = ({
   return (
     <div
       className={cn(
-        "flex flex-col w-full  h-full gap-2 p-1 px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
+        "flex flex-col w-full  h-full gap-2 p-2  px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
         {
           " opacity-100 shadow": selected,
         }
@@ -101,7 +107,7 @@ const SpotifyItem = ({
           className="rounded-lg size-8 object-cover"
         />
         <div className="flex w-full items-start flex-col gap-1">
-          <h3 className="text-start text-sm font-semibold text-primary-content line-clamp-1">
+          <h3 className="text-start text-sm mb-1 font-semibold text-primary-content line-clamp-1">
             {episode.name}
           </h3>
           <p className="text-xs flex justify-between w-full text-primary-content">

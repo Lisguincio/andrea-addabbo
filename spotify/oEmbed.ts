@@ -1,8 +1,6 @@
-import { getSpotifyToken } from "./token";
 import { SpotifyOEmbed } from "./types";
 
-export async function getOEmbed(url:string): Promise<SpotifyOEmbed> {
-
+export async function getOEmbed(url: string): Promise<SpotifyOEmbed> {
   const res = await fetch(
     `https://open.spotify.com/oembed?url=${encodeURIComponent(url)}`,
     {
@@ -13,7 +11,7 @@ export async function getOEmbed(url:string): Promise<SpotifyOEmbed> {
   );
 
   if (!res.ok) {
-	throw new Error("Errore nel recupero dell'oembed");
+    throw new Error("Errore nel recupero dell'oembed");
   }
 
   return res.json();
