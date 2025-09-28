@@ -4,7 +4,7 @@ const TikTok = () => {
   return (
     <>
       <blockquote
-        className="tiktok-embed w-full min-w-xs !m-0"
+        className="tiktok-embed w-full !m-0"
         cite="https://www.tiktok.com/@may.hse"
         data-unique-id="may.hse"
         data-embed-type="creator"

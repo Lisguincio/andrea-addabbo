@@ -37,7 +37,7 @@ export default async function Home() {
           </Card>
         </div>
         <div className="h-full gap-4 flex flex-col">
-          <Card className=" flex-1">
+          <Card className=" flex-1 max-sm:order-2 ">
             <CardBody className="flex flex-col justify-start h-full">
               <CardTitle className="mb-2">
                 TikTok - Pillole di sicurezza
@@ -54,8 +54,8 @@ export default async function Home() {
         </div>
       </div>
       <div className="grid relative grid-cols-1  gap-4 max-md:gap-x-0 mt-4 md:grid-cols-3">
-        <div className="h-full col-span-1">
-          <Card className="">
+        <div className="h-full col-span-1 max-sm:order-2">
+          <Card className="h-full">
             <CardBody>
               <CardTitle className="mb-2">Dove mi trovi</CardTitle>
               <Map />
