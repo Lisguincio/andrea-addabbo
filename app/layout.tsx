@@ -3,6 +3,8 @@ import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PersonalContextProvider from "@/contexts/personalContext";
+import { ThemeProvider } from "@/contexts/themeContext";
 
 export const metadata: Metadata = {
   title: "Andrea Addabbo",
@@ -19,7 +21,6 @@ export const metadata: Metadata = {
         height: 600,
       },
     ],
-
     locale: "it_IT",
     type: "website",
   },
@@ -36,17 +37,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${bricolage.className} bg-slate-200 text-black`}
-    >
-      <body>
-        <section className="relative min-h-screen max-w-7xl mx-auto px-4 pt-4 2xl:px-0 ">
-          <Header />
-          <main className="pt-4">{children}</main>
-          <Footer />
-        </section>
-      </body>
-    </html>
+    <PersonalContextProvider>
+      <html lang="it" className={`${bricolage.className} `}>
+        <body>
+          <div className="w-full h-fit bg-slate-200 transition-colors dark:bg-slate-900 text-black">
+            <section className="relative min-h-screen max-w-7xl mx-auto px-4 pt-4 2xl:px-0  ">
+              <Header />
+              <main className="pt-4">{children}</main>
+              <Footer />
+            </section>
+          </div>
+        </body>
+      </html>
+    </PersonalContextProvider>
   );
 }

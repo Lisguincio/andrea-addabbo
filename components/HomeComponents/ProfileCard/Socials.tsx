@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SOCIALS from "../constants/socials";
+import SOCIALS from "@/constants/socials";
 
 const Socials = () => {
   const socials = SOCIALS;

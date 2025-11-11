@@ -15,6 +15,45 @@ export interface SpotifyPaging<T> {
   total: number;
 }
 
+export interface SpotifyTrack {
+  album: {
+    album_type: string;
+    total_tracks: number;
+    available_markets: string[];
+    external_urls: {
+      spotify: string;
+    };
+    href: string;
+    id: string;
+    images: SpotifyImage[];
+    name: string;
+    release_date: string;
+    release_date_precision: string;
+
+    type: "album";
+    uri: string;
+    artists: SpotifyArtist[];
+  };
+}
+
+export interface SpotifyArtist {
+  external_urls: {
+    spotify: string;
+  };
+  followers: {
+    href: string | null;
+    total: number;
+  };
+  genres: string[];
+  href: string;
+  id: string;
+  images: SpotifyImage[];
+  name: string;
+  popularity: number;
+  type: "artist";
+  uri: string;
+}
+
 // Episodio
 export interface SpotifyEpisode {
   id: string;

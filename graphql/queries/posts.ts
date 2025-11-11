@@ -32,7 +32,7 @@ export interface Post {
   };
 }
 
-export async function getAllPostsFromWordPress(limit: number) {
+export async function getAllPostsFromWordPress(limit = 10) {
   const data = await fetchGraphQL<Post>(`
     query AllPosts {
       posts(first: ${limit}) {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Edge, getAllPostsFromWordPress } from "@/graphql/queries/posts";
+import { Edge } from "@/graphql/queries/posts";
 import { format } from "date-fns";
 import { it } from "date-fns/locale";
 import { LucideCalendarDays } from "lucide-react";
@@ -44,28 +44,4 @@ const PostPreview = ({ post }: { post: Edge }) => {
   );
 };
 
-export const AllPostsGrid = async (limit = 3) => {
-  const { edges } = await getAllPostsFromWordPress(limit);
-
-  return (
-    <div className="flex flex-col h-full">
-      <div className="grid flex-shrink grid-cols-2 gap-4 ">
-        {edges.map((post) => (
-          <PostPreview key={post.node.id} post={post} />
-        ))}{" "}
-      </div>
-    </div>
-  );
-};
-
-export const LatestPosts = async ({ limit = 4 }: { limit?: number }) => {
-  const { edges } = await getAllPostsFromWordPress(limit);
-
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 flex-1  w-full h-full gap-2  ">
-      {edges.map((post) => (
-        <PostPreview key={post.node.id} post={post} />
-      ))}
-    </div>
-  );
-};
+export default PostPreview;
