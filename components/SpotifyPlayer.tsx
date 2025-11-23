@@ -1,19 +1,18 @@
 "use client";
+import { cn } from "@/lib/utils";
+import { SiSpotify } from "@icons-pack/react-simple-icons";
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { SpotifyEpisode, SpotifyOEmbed } from "../spotify/types";
+import { Episode, Track } from "spotify-types";
+import { formatDuration } from "../spotify/utils";
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "./Carousel/Carousel";
-import { cn } from "@/lib/utils";
-import { formatDuration } from "../spotify/utils";
-import { format } from "date-fns";
-import { it } from "date-fns/locale";
-import { SiSpotify } from "@icons-pack/react-simple-icons";
-import Link from "next/link";
-import { Episode, Track } from "spotify-types";
 
 type Item = Episode | Track | null;
 
@@ -35,11 +34,6 @@ const SpotifyPlayer = <T extends Item>({
   const [loaded, setLoaded] = useState<T | null>(
     items.length > 0 ? items[0] : null
   );
-  const [api, setApi] = React.useState<CarouselApi>();
-
-  useEffect(() => {
-    api?.on("select", () => api.scrollTo(api.selectedScrollSnap()));
-  }, [loaded]);
 
   if (!loaded) return <p>Nessun episodio disponibile.</p>;
 
@@ -49,28 +43,30 @@ const SpotifyPlayer = <T extends Item>({
       : `https://open.spotify.com/embed/episode/${loaded.id}`;
 
   return (
-    <div className="flex flex-col flex-1 ">
+    <div className="flex w-full flex-col flex-1 ">
       <iframe
         src={url}
-        width={"100%"}
-        height="170"
-        style={{ zIndex: active ? 0 : -100 }}
-        allowTransparency
+        className={cn("w-full flex h-[100] md:h-[170]", {
+          "pointer-events-none": !active,
+        })}
         allow="encrypted-media; clipboard-write; autoplay; fullscreen; picture-in-picture"
       />
 
       <Carousel
         className="-mt-2"
-        setApi={setApi}
         orientation={carouselOrientation}
-        opts={{ align: "start", skipSnaps: true }}
+        opts={{
+          align: "start",
+          skipSnaps: false,
+        }}
       >
-        <CarouselContent className=" -ml-2">
+        <CarouselContent
+          className={cn(
+            carouselOrientation === "vertical" ? "h-[280px]" : "h-auto"
+          )}
+        >
           {items.map((e) => (
-            <CarouselItem
-              key={e?.id}
-              className="basis-5/12  md:basis-2/3 lg:basis-8/12 pl-2"
-            >
+            <CarouselItem key={e?.id} className="">
               <button onClick={() => setLoaded(e)} className="flex w-full">
                 {e?.type === "episode" ? (
                   <SpotifyEpisodeItem item={e} selected={e?.id == loaded.id} />
@@ -164,21 +160,19 @@ const SpotifyTrackItem = <T extends Track>({
   return (
     <div
       className={cn(
-        "flex flex-col w-full  h-full gap-2 p-2  px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
+        "flex w-full  h-full gap-2 p-2  px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
         {
           " opacity-100 shadow": selected,
         }
       )}
       title={item.name}
     >
-      <div className="flex flex-col items-start gap-2">
-        {
-          <img
-            src={item.album.images[0].url}
-            alt={item.name}
-            className="rounded-lg w-full h-18 object-cover"
-          />
-        }
+      <div className="flex items-start gap-2">
+        <img
+          src={item.album.images[0].url}
+          alt={item.name}
+          className="rounded-lg w-1/3 aspect-square object-cover"
+        />
         <div className="flex w-full items-start flex-col gap-1">
           <h3 className="text-start text-sm mb-1 font-semibold text-primary-content line-clamp-1">
             {item.name}

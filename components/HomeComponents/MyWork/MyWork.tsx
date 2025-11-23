@@ -4,7 +4,7 @@ import React from 'react'
 
 const MyWork = () => {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-1 flex-col">
       <CardBody className="flex flex-col h-full">
         <CardTitle>La mia azienda</CardTitle>
         <div className="flex-1">

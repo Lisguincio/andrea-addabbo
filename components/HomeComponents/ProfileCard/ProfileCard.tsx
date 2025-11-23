@@ -10,9 +10,9 @@ import Socials from "./Socials";
 const ProfileCard = () => {
   const { currentPersonal } = usePersonalContext();
   return (
-    <CardFlip value={currentPersonal} className="h-full">
-      <CardFlipFront>
-        <div className="w-full min-h-60 object-cover relative rounded-xl overflow-hidden">
+    <CardFlip value={currentPersonal} className="min-h-[700px] h-full">
+      <CardFlipFront className="h-full flex flex-col ">
+        <div className="w-full h-full object-cover relative rounded-xl overflow-hidden">
           <Image
             className="object-cover "
             fill
@@ -48,8 +48,8 @@ const ProfileCard = () => {
           </div>
         </div>
       </CardFlipFront>
-      <CardFlipBack>
-        <div className="w-full  h-128 object-cover relative rounded-xl overflow-hidden">
+      <CardFlipBack className="h-full flex flex-col">
+        <div className="w-full h-full object-cover relative rounded-xl overflow-hidden">
           <Image
             className="object-cover "
             fill

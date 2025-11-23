@@ -40,12 +40,12 @@ export default function RootLayout({
     <PersonalContextProvider>
       <html lang="it" className={`${bricolage.className} `}>
         <body>
-          <div className="w-full h-fit bg-slate-200 transition-colors dark:bg-slate-900 text-black">
-            <section className="relative min-h-screen max-w-7xl mx-auto px-4 pt-4 2xl:px-0  ">
+          <div className="w-full bg-slate-200 transition-colors dark:bg-slate-900 text-black">
+            <div className=" max-w-7xl mx-auto px-4 pt-4 2xl:px-0  ">
               <Header />
               <main className="pt-4">{children}</main>
               <Footer />
-            </section>
+            </div>
           </div>
         </body>
       </html>

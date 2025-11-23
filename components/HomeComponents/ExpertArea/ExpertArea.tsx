@@ -17,7 +17,7 @@ const ExpertArea = () => {
   const personalArea = PERSONALAREA;
 
   return (
-    <CardFlip className="h-[320px]" value={currentPersonal}>
+    <CardFlip className="min-h-[320px] flex-1" value={currentPersonal}>
       <CardFlipFront>
         <CardTitle>Di cosa mi occupo</CardTitle>
 
@@ -39,7 +39,6 @@ const ExpertArea = () => {
       </CardFlipFront>
       <CardFlipBack>
         <CardTitle>My Soul</CardTitle>
-
         <div className="grid h-full gap-2 grid-cols-3 xl:grid-cols-3">
           {personalArea.map((o, index) => (
             <Link

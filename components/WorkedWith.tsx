@@ -9,7 +9,7 @@ import { usePersonalContext } from "@/contexts/personalContext";
 const WorkedWith = () => {
   const { currentPersonal } = usePersonalContext();
   return (
-    <CardFlip value={currentPersonal} className="flex flex-1">
+    <CardFlip value={currentPersonal} className="flex min-h-[200px] flex-1">
       <CardFlipFront>
         <CardTitle>Con chi collaboro</CardTitle>
         <div className=" bg-base-200 rounded-2xl ">
