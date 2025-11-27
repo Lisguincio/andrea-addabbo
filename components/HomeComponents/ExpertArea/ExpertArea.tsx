@@ -18,10 +18,10 @@ const ExpertArea = () => {
 
   return (
     <CardFlip className="min-h-[320px] flex-1" value={currentPersonal}>
-      <CardFlipFront>
+      <CardFlipFront className="w-full">
         <CardTitle>Di cosa mi occupo</CardTitle>
 
-        <div className="grid h-full gap-2 grid-cols-3 xl:grid-cols-3">
+        <div className="grid h-full w-full gap-2 grid-cols-3 xl:grid-cols-3">
           {professionalArea.map((o, index) => (
             <Link
               href={o.url}
@@ -37,7 +37,7 @@ const ExpertArea = () => {
           ))}
         </div>
       </CardFlipFront>
-      <CardFlipBack>
+      <CardFlipBack className="w-full">
         <CardTitle>My Soul</CardTitle>
         <div className="grid h-full gap-2 grid-cols-3 xl:grid-cols-3">
           {personalArea.map((o, index) => (

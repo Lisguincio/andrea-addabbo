@@ -91,8 +91,10 @@ export const CardFlipFront = React.forwardRef<
     <CardBody
       ref={ref}
       className={cn(
-        "flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(0deg)] transition-all duration-700 ",
-        value ? "opacity-0" : "opacity-100"
+        "flex absolute inset-0 [backface-visibility:hidden] [transform:rotateY(0deg)] transition-all duration-700",
+        value
+          ? "opacity-0 pointer-events-none"
+          : "opacity-100 pointer-events-auto"
       )}
     >
       <div className={cn("flex flex-col p-5 overflow-hidden", className)}>
@@ -112,9 +114,11 @@ export const CardFlipBack = React.forwardRef<
     <CardBody
       ref={ref}
       className={cn(
-        "flex absolute inset-0 [backface-visibility:hidden] transition-all duration-700 ",
+        "flex absolute inset-0 [backface-visibility:hidden] transition-all duration-700",
         getOrentietion(direction),
-        value ? "opacity-100" : "opacity-0"
+        value
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       )}
     >
       <div className={cn("flex flex-col p-5 overflow-hidden", className)}>

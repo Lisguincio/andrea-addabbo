@@ -16,7 +16,7 @@ const TikTok = ({ tracks }: { tracks: PlaylistTrack[] }) => {
     <CardFlip
       direction="left"
       value={currentPersonal}
-      className="max-sm:order-2 flex-3 md:flex-4 xl:flex-3 min-h-[300px] max-sm:min-h-[480px] "
+      className=" flex-2 md:flex-4 xl:flex-3 min-h-[300px] max-md:min-h-[480px] "
     >
       <CardFlipFront>
         <CardTitle className="mb-2">TikTok - Pillole di sicurezza</CardTitle>

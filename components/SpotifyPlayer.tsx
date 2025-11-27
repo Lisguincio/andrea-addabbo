@@ -79,7 +79,12 @@ const SpotifyPlayer = <T extends Item>({
               </button>
             </CarouselItem>
           ))}
-          <CarouselItem className="basis-auto pl-2">
+          <CarouselItem
+            className={cn(
+              "basis-auto",
+              carouselOrientation === "vertical" ? "pt-2" : "pl-2"
+            )}
+          >
             <Link
               target="_blank"
               href={extraLink}
@@ -88,7 +93,7 @@ const SpotifyPlayer = <T extends Item>({
               }
             >
               <SiSpotify />
-              <div className="flex max-w-24 items-center gap-2 ">
+              <div className="flex  items-center gap-2 ">
                 <h3 className="text-center text-xs font-semibold line-clamp-2">
                   {extraText}
                 </h3>
@@ -113,7 +118,7 @@ const SpotifyEpisodeItem = <T extends Item>({
   return (
     <div
       className={cn(
-        "flex flex-col w-full  h-full gap-2 p-2  px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
+        "flex flex-col w-full  h-full gap-2 p-2 px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
         {
           " opacity-100 shadow": selected,
         }
@@ -160,7 +165,7 @@ const SpotifyTrackItem = <T extends Track>({
   return (
     <div
       className={cn(
-        "flex w-full  h-full gap-2 p-2  px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
+        "flex w-full  h-full gap-2 p-2 px-2 bg-base-300 opacity-50 bg-primary rounded-2xl transition-all",
         {
           " opacity-100 shadow": selected,
         }

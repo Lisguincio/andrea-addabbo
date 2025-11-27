@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col justify-center ">
-      <div className="grid md:min-h-[720px] relative grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid xl:min-h-[720px] relative grid-cols-1 md:grid-cols-3 gap-4">
         <div className="flex h-full ">
           <ProfileCard />
         </div>
@@ -26,7 +26,7 @@ export default async function Home() {
           <ExpertArea />
           <MyWork />
         </div>
-        <div className="flex min-h-[300px] gap-4 xl:col-span-1  flex-col xl:flex-col">
+        <div className="flex flex-row min-h-[300px] gap-4 xl:col-span-1  md:flex-col">
           <TikTok tracks={playlistTracks} />
           <WorkedWith />
         </div>
