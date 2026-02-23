@@ -1,5 +1,5 @@
 "use client";
-import {CardFlip, CardFlipBack, CardFlipFront} from "@/components/Card/FlipCard";
+import { CardFlip, CardFlipBack, CardFlipFront } from "@/components/Card/FlipCard";
 import settings from "@/constants/settings";
 import { usePersonalContext } from "@/contexts/personalContext";
 import { LucideMail, LucidePhoneCall } from "lucide-react";
@@ -20,7 +20,7 @@ const ProfileCard = () => {
             alt="Profile Card"
           />
         </div>
-        <div className="mt-2 flex h-full  flex-col">
+        <div className="mt-2 flex h-full flex-col">
           <h3 className="card-title flex-wrap">
             <span className="flex-grow"> {settings.work.title}</span>
             <div className="flex items-center justify-end flex-shrink gap-2 mr-auto">
@@ -31,7 +31,7 @@ const ProfileCard = () => {
             <p>{settings.work.description}</p>
           </div>
 
-          <div className=" mt-3 flex items-center gap-2">
+          <div className="mt-auto flex items-center gap-2">
             <Link
               href={"tel:+393791074732"}
               className=" bg-primary hover:brightness-90 rounded-lg py-4 px-6 flex items-center justify-center flex-grow text-white gap-2 "
@@ -57,7 +57,7 @@ const ProfileCard = () => {
             alt="Profile Card"
           />
         </div>
-        <div className="mt-2 flex h-full  flex-col">
+        <div className="mt-2 flex h-full flex-col">
           <h3 className="card-title flex-wrap">
             <span className="flex-grow"> {settings.personal.title}</span>
           </h3>
@@ -65,7 +65,7 @@ const ProfileCard = () => {
             <p>{settings.personal.description}</p>
           </div>
 
-          <div className=" mt-3 flex items-center gap-2">
+          <div className="mt-auto flex items-center gap-2">
             <Link
               href={"tel:+393791074732"}
               className=" bg-primary hover:brightness-90 rounded-lg py-4 px-6 flex items-center justify-center flex-grow text-white gap-2 "

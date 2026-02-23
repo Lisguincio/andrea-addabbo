@@ -8,6 +8,7 @@ import {
 import SpotifyPlayer, { SpotifyPlayerProps } from "@/components/SpotifyPlayer";
 import Youtube from "@/components/Youtube";
 import { usePersonalContext } from "@/contexts/personalContext";
+import { AudioLinesIcon } from "lucide-react";
 import { Episode, Track } from "spotify-types";
 
 const Players = ({ items }: { items: (Episode | Track)[] }) => {
@@ -36,17 +37,28 @@ const Players = ({ items }: { items: (Episode | Track)[] }) => {
           />
         </div>
       </CardFlipFront>
-      <CardFlipBack className="w-full flex">
-        <CardTitle>Ascoltami su Spotify - iRadioAut</CardTitle>
-
+      <CardFlipBack className="w-full flex relative">
+        <AudioLinesIcon
+          className="absolute top-6 right-8 z-0 rotate-[20deg] opacity-5"
+          size={70}
+          color="#000000"
+        />
+        <CardTitle className="">Ascoltami su Spotify - iRadioAut</CardTitle>
+        <p className="mb-6">
+          iRadioAut è un collettivo che vive la musica come un luogo di
+          incontro: voci diverse, sensibilità che si intrecciano e un modo di
+          raccontare emozioni quotidiane con sincerità.
+        </p>
         <iframe
           data-testid="embed-iframe"
-          className="rounded-xl h-full"
+          style={{ borderRadius: "12px", marginBottom: 0 }}
           src="https://open.spotify.com/embed/artist/2rYVUt4lWJJMxEFss6lxG2?utm_source=generator"
           width="100%"
-          height="800"
+          height="152"
           frameBorder="0"
+          allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
         ></iframe>
       </CardFlipBack>
     </CardFlip>

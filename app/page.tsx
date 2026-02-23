@@ -26,7 +26,7 @@ export default async function Home() {
           <ExpertArea />
           <MyWork />
         </div>
-        <div className="flex flex-row min-h-[300px] gap-4 xl:col-span-1  md:flex-col">
+        <div className="flex flex-col min-h-[300px] gap-4 xl:col-span-1 ">
           <TikTok tracks={playlistTracks} />
           <WorkedWith />
         </div>
