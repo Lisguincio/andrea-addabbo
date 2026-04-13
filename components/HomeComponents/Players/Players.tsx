@@ -57,7 +57,7 @@ const Players = () => {
           <iframe
             data-testid="embed-iframe"
             style={{ borderRadius: "12px", marginBottom: 0 }}
-            src="https://open.spotify.com/embed/artist/2rYVUt4lWJJMxEFss6lxG2?utm_source=generator"
+            src={`https://open.spotify.com/embed/artist/${process.env.NEXT_PUBLIC_SPOTIFY_ARTIST_ID}?utm_source=generator`}
             width="100%"
             height="100%"
             frameBorder="0"
