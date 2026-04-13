@@ -30,7 +30,7 @@ const ExpertArea = () => {
               className="flex flex-col text-center group"
             >
               <div className="transition-colors w-full h-20 bg-gray-200 group-hover:bg-gray-300 rounded-2xl p-2 flex justify-center items-center ">
-                <Image src={o.icon} alt={o.title} width={32} height={32} />
+                <Image src={o.icon} alt={o.title} width={32} height={32} sizes="32px" />
               </div>
               <span className="text-xs mt-2 px-2 line-clamp-2">{o.title}</span>
             </Link>
@@ -48,7 +48,7 @@ const ExpertArea = () => {
               className="flex flex-col text-center group"
             >
               <div className="transition-colors w-full h-20 bg-gray-200 group-hover:bg-gray-300 rounded-2xl p-2 flex justify-center items-center ">
-                <Image src={o.icon} alt={o.title} width={32} height={32} />
+                <Image src={o.icon} alt={o.title} width={32} height={32} sizes="32px" />
               </div>
               <span className="text-xs mt-2 px-2 line-clamp-2">{o.title}</span>
             </Link>

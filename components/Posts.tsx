@@ -20,6 +20,7 @@ const PostPreview = ({ post }: { post: Edge }) => {
             src={featuredImage.node.sourceUrl}
             alt={featuredImage.node.altText}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 320px"
             className="absolute w-full h-full object-cover"
           />
         )}

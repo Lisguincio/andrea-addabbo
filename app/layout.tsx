@@ -4,9 +4,10 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PersonalContextProvider from "@/contexts/personalContext";
-import { ThemeProvider } from "@/contexts/themeContext";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://andreaaddabbo.it"),
   title: "Andrea Addabbo",
   description: "Sicurezza sul lavoro e RSPP a Varese",
   openGraph: {
@@ -37,7 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className={`${bricolage.className} `}>
+    <html lang="it" className={`${bricolage.className} `} suppressHydrationWarning>
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
       <body>
         <PersonalContextProvider>
           <div className="w-full bg-slate-200 transition-colors dark:bg-slate-900 text-black">
@@ -47,7 +49,7 @@ export default function RootLayout({
               <Footer />
             </div>
           </div>
-        </PersonalContextProvider >
+        </PersonalContextProvider>
       </body>
     </html>
   );

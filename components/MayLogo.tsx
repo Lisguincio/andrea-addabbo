@@ -12,6 +12,8 @@ const MayLogo = () => {
 		}
 		width={200}
 		height={200}
+		sizes="200px"
+		style={{ height: 'auto' }}
 		alt="Logo MAY"
 		/>
 		<h2 className='font-bold text-3xl mb-2'>MAY S.R.L.S.</h2>

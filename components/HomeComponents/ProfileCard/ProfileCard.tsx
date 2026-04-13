@@ -16,6 +16,8 @@ const ProfileCard = () => {
           <Image
             className="object-cover "
             fill
+            sizes="(max-width: 768px) 100vw, 420px"
+            priority
             src={settings.work.coverImage}
             alt="Profile Card"
           />
@@ -53,6 +55,8 @@ const ProfileCard = () => {
           <Image
             className="object-cover "
             fill
+            sizes="(max-width: 768px) 100vw, 420px"
+            priority
             src={settings.personal.coverImage}
             alt="Profile Card"
           />

@@ -7,15 +7,9 @@ import TikTok from "@/components/HomeComponents/TikTok/TikTok";
 import Players from "@/components/HomeComponents/Players/Players";
 import WorkedWith from "@/components/WorkedWith";
 import { getAllPostsFromWordPress } from "@/graphql/queries/posts";
-import { getPodcastEpisodes } from "@/spotify/episodes";
-import { getPlaylistTracks } from "@/spotify/userFavorite";
-import { Artist } from "spotify-types";
 
 export default async function Home() {
   const { edges: latestPostsEdge } = await getAllPostsFromWordPress(4);
-  const { items: podcastEpisodes } = await getPodcastEpisodes(10);
-  const { items: playlistTracks } = await getPlaylistTracks();
-
   return (
     <div className="flex flex-col justify-center ">
       <div className="grid xl:min-h-[720px] relative grid-cols-1 md:grid-cols-3 gap-4">
@@ -27,7 +21,7 @@ export default async function Home() {
           <MyWork />
         </div>
         <div className="flex flex-col min-h-[300px] gap-4 xl:col-span-1 ">
-          <TikTok tracks={playlistTracks} />
+          <TikTok />
           <WorkedWith />
         </div>
       </div>
@@ -36,7 +30,7 @@ export default async function Home() {
           <Map />
         </div>
         <div className="h-full col-span-2">
-          <Players items={podcastEpisodes} />
+          <Players />
         </div>
       </div>
       <News latestPosts={latestPostsEdge} />

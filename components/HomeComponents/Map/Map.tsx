@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { APIProvider, Marker, Map as VisMap } from "@vis.gl/react-google-maps";
+import { APIProvider, AdvancedMarker, Map as VisMap } from "@vis.gl/react-google-maps";
 import POSITION from "../../../constants/position";
 import { Card, CardBody, CardTitle } from "@/components/Card/Card";
 
@@ -21,8 +21,9 @@ const Map = () => {
               defaultZoom={defaultZoom}
               gestureHandling={"greedy"}
               disableDefaultUI={true}
+              mapId="DEMO_MAP_ID"
             >
-              <Marker position={{ lat, lng }} />
+              <AdvancedMarker position={{ lat, lng }} />
             </VisMap>
           </APIProvider>
         </div>

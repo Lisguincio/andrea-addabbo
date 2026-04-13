@@ -29,6 +29,7 @@ const WorkedWith = () => {
                     src={c.logo}
                     alt={`${c.name} logo`}
                     fill
+                    sizes="(max-width: 768px) 128px, 150px"
                     className="object-contain"
                   />
                 </div>
@@ -68,6 +69,7 @@ const WorkedWith = () => {
                     src={c.logo}
                     alt={`${c.name} logo`}
                     fill
+                    sizes="(max-width: 768px) 128px, 150px"
                     className="object-contain"
                   />
                 </div>
