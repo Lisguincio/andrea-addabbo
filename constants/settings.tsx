@@ -1,4 +1,3 @@
-
 const settings = {
   work: {
     title: "Andrea Addabbo",
@@ -10,7 +9,7 @@ const settings = {
   personal: {
     title: "Andrea Addabbo",
     description: `Andrea Addabbo è un bassista dal sound riconoscibile, caratterizzato da groove funk/soul, tecnica slap e fingerstyle, e dall’uso espressivo del basso fretless. Cura personalmente i suoi effetti e sviluppa un approccio musicale che unisce precisione, ricerca timbrica e una forte identità stilistica.`,
-    coverImage: "/assets/profile.png",
+    coverImage: "/assets/Andrea_Addabbo_Guitar.jpeg",
   },
 };
 

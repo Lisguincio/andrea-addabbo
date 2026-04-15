@@ -1,4 +1,3 @@
-
 const EXPERTAREA = [
   {
     title: "Sicurezza dei macchinari",
@@ -34,34 +33,20 @@ const EXPERTAREA = [
 
 const PERSONALAREA = [
   {
-    title: "🎵 Slap & Fingerstyle",
-    icon: "/assets/icons/005-excavator.png",
-    url: "https://maysicurezza.it/sicurezza-dei-macchinari/",
+    title: "Hard Rock",
+    icon: "/assets/icons/music/rock-music.png",
   },
   {
-    title: "🎸 Basso fretless",
-    icon: "/assets/icons/007-ce.png",
-    url: "https://maysicurezza.it/marcatura-ce/",
+    title: "Rock Blues",
+    icon: "/assets/icons/music/blues.png",
   },
   {
-    title: "🎛️ Effetti custom",
-    icon: "/assets/icons/002-search.png",
-    url: "https://maysicurezza.it/servizio/audit-documentale/",
+    title: "Prog Rock",
+    icon: "/assets/icons/music/progressive-rock.png",
   },
   {
-    title: "🎼 Groove funk/soul",
-    icon: "/assets/icons/003-wrench.png",
-    url: "https://maysicurezza.it/servizio/redazione-dvr/",
-  },
-  {
-    title: "🎹 Collaborazioni",
-    icon: "/assets/icons/006-sign.png",
-    url: "https://maysicurezza.it/servizio/indagini-strumentali/",
-  },
-  {
-    title: "🎤 Backing vocals",
-    icon: "/assets/icons/001-learning.png",
-    url: "https://maysicurezza.it/supporto-ai-professionisti/",
+    title: "Elettropop",
+    icon: "/assets/icons/music/lightning.png",
   },
 ];
 export { EXPERTAREA, PERSONALAREA };
