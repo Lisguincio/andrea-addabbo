@@ -1,5 +1,9 @@
 "use client";
-import { CardFlip, CardFlipBack, CardFlipFront } from "@/components/Card/FlipCard";
+import {
+  CardFlip,
+  CardFlipBack,
+  CardFlipFront,
+} from "@/components/Card/FlipCard";
 import settings from "@/constants/settings";
 import { usePersonalContext } from "@/contexts/personalContext";
 import { LucideMail, LucidePhoneCall } from "lucide-react";

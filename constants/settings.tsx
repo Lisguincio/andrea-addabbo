@@ -8,7 +8,9 @@ const settings = {
 
   personal: {
     title: "Andrea Addabbo",
-    description: `Andrea Addabbo è un bassista dal sound riconoscibile, caratterizzato da groove funk/soul, tecnica slap e fingerstyle, e dall’uso espressivo del basso fretless. Cura personalmente i suoi effetti e sviluppa un approccio musicale che unisce precisione, ricerca timbrica e una forte identità stilistica.`,
+    description: `Chitarrista autodidatta da 28 anni.
+Ho costruito il mio percorso a partire con il rock britannico degli anni '70 e '80, dalle melodie elaborate dei Queen (per i quali ho sviluppato una vera e propria ossessione) alle chitarre taglienti di Deep Purple, Iron Maiden e Ozzy Osbourne.
+Con 20 anni di militanza in una Tribute Band dei Queen alle spalle, mi sono poi spostato verso l’elettropop, l’alternative rock e l’hard rock.`,
     coverImage: "/assets/Andrea_Addabbo_Guitar.jpeg",
   },
 };
