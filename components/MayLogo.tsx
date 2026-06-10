@@ -20,7 +20,7 @@ const MayLogo = () => {
         alt="Logo MAY"
       />
       <h2 className="font-bold text-3xl mb-2">MAY S.R.L.</h2>
-      <h3 className="uppercase italic text-2xl">SOLUZIONI PER L'INDUSTRIA</h3>
+      <h3 className="uppercase italic text-2xl">Macchinari sicuri<br /> Aziende sicure</h3>
     </Link>
   );
 };
