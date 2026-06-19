@@ -34,7 +34,7 @@ const COMPANIES: Company[] = [
   {
     id: 5,
     name: "MB Safety",
-    logo: "/assets/collaborations/LOGO_MB_SAFETY.png",
+    logo: "/assets/collaborations/LOGO_MB_SAFETY.PNG",
   },
 ];
 
